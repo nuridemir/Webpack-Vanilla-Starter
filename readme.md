@@ -7,7 +7,7 @@ starter kit for vanilla with Webpack, tailwind, postcss, jquery
 Firstly clone the project $ git clone https://github.com/nuridemir/Webpack-Vanilla-Starter.git
 
 
-npm i
+npm install
 
 npm update
 
