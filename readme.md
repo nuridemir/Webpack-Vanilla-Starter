@@ -1,5 +1,5 @@
-npm i
-npm update
+#npm i
+#npm update
 
 npm run start //projeyi ayağa kaldırır
 npm run dev //projeyi development ortamda build eder
