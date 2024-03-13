@@ -7,3 +7,4 @@ import "../css/style.css";
 // console.log("hello world !")
 
 // $("body").css("border", "2px solid red");
+console.log("Ben her sayfada varım!!!");
