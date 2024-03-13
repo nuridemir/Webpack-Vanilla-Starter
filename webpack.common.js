@@ -7,7 +7,8 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
     mode: 'development',
     entry: {
-        index: './src/index.js',
+        main: './src/assets/js/main.js',
+        services: './src/assets/js/services.js',
     },
     output: {
         filename: '[name].bundle.js',
@@ -18,18 +19,26 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Index Page',
             template: './src/index.html',
-            chunks: ['index'],
+            chunks: ['main'],
         }),
         new HtmlWebpackPlugin({
             title: 'Services Page',
             filename: 'services.html',
             template: './src/services.html',
-            chunks: ['index'],
+            chunks: ['main', 'services'],
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Services Detail Page',
+            filename: 'services-detail.html',
+            template: './src/services-detail.html',
+            chunks: ['main'],
         }),
         new webpack.ProvidePlugin({
             join: ['lodash', 'join'],
         }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: './src/assets/css/[name].css',
+        }),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
