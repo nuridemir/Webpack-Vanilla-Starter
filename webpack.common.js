@@ -8,7 +8,6 @@ module.exports = {
     mode: 'development',
     entry: {
         index: './src/index.js',
-        // print: './src/print.js',
     },
     output: {
         filename: '[name].bundle.js',
@@ -17,7 +16,15 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Template',
+            title: 'Index Page',
+            template: './src/index.html',
+            chunks: ['index'],
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Services Page',
+            filename: 'services.html',
+            template: './src/services.html',
+            chunks: ['index'],
         }),
         new webpack.ProvidePlugin({
             join: ['lodash', 'join'],
@@ -39,7 +46,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'style-loader', 'css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
