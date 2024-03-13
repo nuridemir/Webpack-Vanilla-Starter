@@ -1,6 +1,6 @@
 ## Project Name
 
-Webpack starter kit for vanilla
+starter kit for vanilla with Webpack, tailwind, postcss, jquery
 
 ## Setup
 
